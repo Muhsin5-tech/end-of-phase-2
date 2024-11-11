@@ -61,3 +61,10 @@ h1{
   border-radius: 20px;
   color: white;
 }
+.note2{
+  height: 20px;
+}
+.add-destination-form{
+  display: flex;
+  margin-left: 450px;
+}

@@ -38,8 +38,9 @@ function AddDestinationForm({ setDestinations}) {
     }
 
 return(
-    <form onSubmit={handleSubmit} className="add-destination-form">
+    <form onSubmit={handleSubmit} >
         <h2>Add Neew Destination</h2>
+        <div className="add-destination-form">
         <input 
             type="text"
             name="name"
@@ -56,14 +57,16 @@ return(
             placeholder="Image URL"
             required
         />
-        <textarea
+        <textarea className="note2"
         name="notes"
         value={newDestination.notes}
         onChange={handleChange}
         placeholder="Notes"
         required
       />
-      <button type="Submit">Add destination</button>
+       <button type="Submit">Add destination</button>
+      </div>
+     
     </form>
 )
 
