@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
      <h1>Travel Bucket List App</h1>
-     <ul>
+     <ul className="list">
      {destinations.map((destination) => (
           <li key={destination.id}>
           <h2>{destination.name}</h2>
