@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css'
 
+import destinationList from "./DestinationList";
 
 function App() {
   const [destinations, setDestinations] = useState([])
@@ -41,25 +42,7 @@ function App() {
   return (
     <div className="App">
      <h1>Travel Bucket List App</h1>
-     <div className="destination-list">
-     {destinations.map((destination) => (
-      <div className="destination-item" key={destination.id}>
-          <h2>{destination.name}</h2>
-          <img  src={destination.image} alt={destination.name} width="300" />
-          
-          <div className="visit-area">
-          <p>Visited: {destination.visited ? "Yes" : "No"}</p>
-          <button className="visit-btn" onClick={() => toggleVisited(destination.id)}>
-            {destination.visited ? "Not Visited" : "Visited"}
-          </button>
-          </div>
-
-          <div className="notes">
-           <p>Notes: {destination.notes}</p>
-          </div> 
-        </div>
-        ))}
-    </div>
+     <destinationList destinations={destinations} toggleVisited={toggleVisited} />
     </div>
   );
 }
