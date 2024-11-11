@@ -10,6 +10,7 @@
       {
         "id": 2,
         "name": "Kyoto",
+        "image": "https://shorturl.at/W4Aa2",
         "visited": false,
         "notes": "Looking forward to exploring the temples and cherry blossoms."
       }
