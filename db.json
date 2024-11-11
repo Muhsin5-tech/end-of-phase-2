@@ -1,19 +1,18 @@
 {
-    "destinations": [
-      {
-        "id": 1,
-        "name": "Paris",
-        "image": "https://urlr.me/XrstP",
-        "visited": false,
-        "notes": "Dreaming of seeing the Eiffel Tower!"
-      },
-      {
-        "id": 2,
-        "name": "Kyoto",
-        "image": "https://shorturl.at/W4Aa2",
-        "visited": false,
-        "notes": "Looking forward to exploring the temples and cherry blossoms."
-      }
-    ]
-  }
-  
+  "destinations": [
+    {
+      "id": "1",
+      "name": "Paris",
+      "image": "https://urlr.me/XrstP",
+      "visited": true,
+      "notes": "Dreaming of seeing the Eiffel Tower!"
+    },
+    {
+      "id": "2",
+      "name": "Kyoto",
+      "image": "https://shorturl.at/W4Aa2",
+      "visited": false,
+      "notes": "Looking forward to exploring the temples and cherry blossoms."
+    }
+  ]
+}

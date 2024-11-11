@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: olive;
+  background-color: navajowhite;
 }
 
 code {
@@ -22,10 +22,16 @@ h1{
   flex-wrap: wrap;
   gap: 20px;
 }
+.App{
+  padding: 20px;
+}
 
 .destination-item {
   width: 250px; 
   text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid darkgrey;
 }
 
 
@@ -34,4 +40,24 @@ h1{
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.visit-area{
+  background-color: olive;
+  border-radius: 20px;
+  color: white;
+}
+
+.visit-btn{
+  background-color: yellowgreen;
+  border-radius: 8px;
+  border: 1px solid;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.notes{
+  background-color: olive;
+  border-radius: 20px;
+  color: white;
 }
