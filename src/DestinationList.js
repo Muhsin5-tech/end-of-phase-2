@@ -1,9 +1,9 @@
 import React from "react";
-import DestinationItem from '.DestinationItem'
+import DestinationItem from './DestinationItem'
 
 function destinationList({ destinations, toggleVisited }) {
     return (
-    <div>
+    <div className="destination-list">
         {destinations.map((destination) => (
             <DestinationItem 
                 key={destination.id}

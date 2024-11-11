@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import './App.css'
 
-import destinationList from "./DestinationList";
+import DestinationList from "./DestinationList";
+import AddDestinationForm from "./AddDestinationForm";
 
 function App() {
   const [destinations, setDestinations] = useState([])
@@ -13,7 +14,7 @@ function App() {
     .then((response) => response.json())
     .then((data) => setDestinations(data))
     .catch((error) => console.error('Error fetching data', error))
-  })
+  }, [])
   
   
   const toggleVisited = (id) => {
@@ -42,7 +43,8 @@ function App() {
   return (
     <div className="App">
      <h1>Travel Bucket List App</h1>
-     <destinationList destinations={destinations} toggleVisited={toggleVisited} />
+     <AddDestinationForm setDestinations={setDestinations}/>
+     <DestinationList destinations={destinations} toggleVisited={toggleVisited} />
     </div>
   );
 }
