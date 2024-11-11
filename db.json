@@ -1,0 +1,10 @@
+{
+    "items": [
+      {
+        "id": 1,
+        "name": "Sample Item",
+        "description": "This is a sample item from the backend."
+      }
+    ]
+  }
+  
