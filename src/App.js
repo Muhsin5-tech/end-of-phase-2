@@ -20,16 +20,16 @@ function App() {
   return (
     <div className="App">
      <h1>Travel Bucket List App</h1>
-     <ul className="list">
+     <div className="destination-list">
      {destinations.map((destination) => (
-          <li key={destination.id}>
+      <div className="destination-item" key={destination.id}>
           <h2>{destination.name}</h2>
           <img  src={destination.image} alt={destination.name} width="300" />
           <p>Visited: {destination.visited ? "Yes" : "No"}</p>
           <p>Notes: {destination.notes}</p>
-        </li>
+        </div>
         ))}
-     </ul>
+    </div>
     </div>
   );
 }
