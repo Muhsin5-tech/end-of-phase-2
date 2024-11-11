@@ -1,9 +1,16 @@
 {
-    "items": [
+    "destinations": [
       {
         "id": 1,
-        "name": "Sample Item",
-        "description": "This is a sample item from the backend."
+        "name": "Paris",
+        "visited": false,
+        "notes": "Dreaming of seeing the Eiffel Tower!"
+      },
+      {
+        "id": 2,
+        "name": "Kyoto",
+        "visited": false,
+        "notes": "Looking forward to exploring the temples and cherry blossoms."
       }
     ]
   }
