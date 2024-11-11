@@ -3,6 +3,7 @@
       {
         "id": 1,
         "name": "Paris",
+        "image": "./paris.jpg",
         "visited": false,
         "notes": "Dreaming of seeing the Eiffel Tower!"
       },

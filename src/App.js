@@ -24,6 +24,7 @@ function App() {
      {destinations.map((destination) => (
           <li key={destination.id}>
           <h2>{destination.name}</h2>
+          <img  src={destination.image} alt={destination.name} width="300" />
           <p>Visited: {destination.visited ? "Yes" : "No"}</p>
           <p>Notes: {destination.notes}</p>
         </li>
