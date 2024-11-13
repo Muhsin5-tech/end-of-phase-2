@@ -4,11 +4,12 @@ import './App.css'
 import DestinationList from "./DestinationList";
 import AddDestinationForm from "./AddDestinationForm";
 import SearchDestination from "./SearchDestination";
-import Navbar from "./NavBar";
+import NavBar from "./NavBar";
 
 function App() {
   const [destinations, setDestinations] = useState([])
   const [filteredDestinations, setFilteredDestinations] = useState([])
+  const [activePage, setActivePage] = useState('home')
 
 
 
@@ -49,10 +50,36 @@ function App() {
   
   return (
     <div className="App">
-     <h1>Travel Bucket List App</h1>
-     <AddDestinationForm setDestinations={setDestinations}/>
-     <SearchDestination destinations={destinations} onSearchResults={setFilteredDestinations} />
-     <DestinationList destinations={filteredDestinations} toggleVisited={toggleVisited} />
+       <h1>Travel Bucket List App</h1>
+      <NavBar setActivePage={setActivePage} />
+      
+     
+
+      {activePage === 'home' && (
+        <>
+        <DestinationList destinations={filteredDestinations} toggleVisited={toggleVisited} />
+        </>
+      )}
+     
+     {activePage === 'add' && (
+      <AddDestinationForm setDestinations={setDestinations}/>
+     )}
+     
+
+     {activePage === 'search' && (
+      <>
+      <SearchDestination destinations={destinations} onSearchResults={setFilteredDestinations} />
+      <DestinationList destinations={filteredDestinations} toggleVisited={toggleVisited} />
+      </>
+     )}
+
+      {activePage === 'visited' && (
+        <DestinationList 
+          destinations={destinations.filter(dest => dest.visited)} 
+          toggleVisited={toggleVisited} 
+        />
+      )}
+     
     </div>
   );
 }
