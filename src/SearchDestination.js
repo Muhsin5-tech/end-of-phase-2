@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SearchDestination({ destinations, setFilteredDestinations }) {
+function SearchDestination({ destinations, onSearchResults }) {
     const [searchQuery, setSearchQuery] = useState("")
 
 
@@ -9,13 +9,14 @@ function SearchDestination({ destinations, setFilteredDestinations }) {
         const filteredDestinations = destinations.filter(destination =>
             destination.name.toLowerCase().includes(event.target.value.toLowerCase())
         )
-        setFilteredDestinations(filteredDestinations)
+        onSearchResults(filteredDestinations)
     }
 
 return(
-    <div>
+    <div className="search-container">
         <input 
         type="text"
+        className="search-input"
         value={searchQuery}
         onChange={handleSearchChange}
         placeholder="Search"

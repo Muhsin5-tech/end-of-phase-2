@@ -3,16 +3,22 @@ import './App.css'
 
 import DestinationList from "./DestinationList";
 import AddDestinationForm from "./AddDestinationForm";
+import SearchDestination from "./SearchDestination";
+import Navbar from "./NavBar";
 
 function App() {
   const [destinations, setDestinations] = useState([])
+  const [filteredDestinations, setFilteredDestinations] = useState([])
 
 
 
   useEffect(() => {
     fetch("http://localhost:3001/destinations")
     .then((response) => response.json())
-    .then((data) => setDestinations(data))
+    .then((data) => {
+      setDestinations(data)
+      setFilteredDestinations(data)
+    })
     .catch((error) => console.error('Error fetching data', error))
   }, [])
   
@@ -30,6 +36,7 @@ function App() {
 
   
   setDestinations(updatedDestinations)
+  setFilteredDestinations(updatedDestinations)
 
   fetch(`http://localhost:3001/destinations/${id}`, {
     method: "PATCH",
@@ -44,7 +51,8 @@ function App() {
     <div className="App">
      <h1>Travel Bucket List App</h1>
      <AddDestinationForm setDestinations={setDestinations}/>
-     <DestinationList destinations={destinations} toggleVisited={toggleVisited} />
+     <SearchDestination destinations={destinations} onSearchResults={setFilteredDestinations} />
+     <DestinationList destinations={filteredDestinations} toggleVisited={toggleVisited} />
     </div>
   );
 }

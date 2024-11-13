@@ -64,7 +64,67 @@ h1{
 .note2{
   height: 20px;
 }
-.add-destination-form{
+
+
+.search-container {
   display: flex;
-  margin-left: 450px;
+  justify-content: center;
+  margin: 20px 0;
 }
+
+
+.search-input {
+  width: 300px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.add-form-container {
+  background-color: #333;
+  padding: 20px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.add-form-container h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.add-form-container input, 
+.add-form-container textarea, 
+.add-form-container button {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 400px;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+
+.add-form-container button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-form-container button:hover {
+  background-color: #0056b3;
+}
+

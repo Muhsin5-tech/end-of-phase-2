@@ -39,8 +39,8 @@ function AddDestinationForm({ setDestinations}) {
 
 return(
     <form onSubmit={handleSubmit} >
-        <h2>Add Neew Destination</h2>
-        <div className="add-destination-form">
+        <h2>Add New Destination</h2>
+        <div className="add-form-container">
         <input 
             type="text"
             name="name"
