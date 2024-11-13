@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
-function NavBar({ setActivePage }) {
+function NavBar() {
   return (
     <nav className="navbar">
       <div className="link-container">
-        <button className="links-input" onClick={() => setActivePage('home')}>Home</button>
-        <button className="links-input" onClick={() => setActivePage('add')}>Add Destination</button>
-        <button className="links-input" onClick={() => setActivePage('search')}>Search Destinations</button>
-        <button className="links-input" onClick={() => setActivePage('visited')}>Visited Destinations</button>
+        <Link to="/" className="links-input">Home</Link>
+        <Link to="/add" className="links-input">Add Destination</Link>
+        <Link to="/search" className="links-input">Search Destinations</Link>
+        <Link to="/visited" className="links-input">Visited Destinations</Link>
       </div>
     </nav>
   );

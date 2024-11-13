@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import './App.css'
 
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DestinationList from "./DestinationList";
 import AddDestinationForm from "./AddDestinationForm";
 import SearchDestination from "./SearchDestination";
@@ -9,8 +11,6 @@ import NavBar from "./NavBar";
 function App() {
   const [destinations, setDestinations] = useState([])
   const [filteredDestinations, setFilteredDestinations] = useState([])
-  const [activePage, setActivePage] = useState('home')
-
 
 
   useEffect(() => {
@@ -49,38 +49,30 @@ function App() {
 }
   
   return (
-    <div className="App">
-       <h1>Travel Bucket List App</h1>
-      <NavBar setActivePage={setActivePage} />
-      
-     
+    <Router>
+        <div className="App">
+          <h1>Travel Bucket List App</h1>
+          <NavBar />
+          
+        <Routes>
 
-      {activePage === 'home' && (
-        <>
-        <DestinationList destinations={filteredDestinations} toggleVisited={toggleVisited} />
-        </>
-      )}
-     
-     {activePage === 'add' && (
-      <AddDestinationForm setDestinations={setDestinations}/>
-     )}
-     
+          <Route path="/" element={<DestinationList destinations={filteredDestinations} toggleVisited={toggleVisited} />} />
+          <Route path="/add" element={<AddDestinationForm setDestinations={setDestinations} />} />
+          <Route path="/search" element={
+            <>
+            <SearchDestination destinations={destinations} onSearchResults={setFilteredDestinations} />
+            <DestinationList destinations={filteredDestinations} toggleVisited={toggleVisited} />
+            </>
+          }
+         />
+          <Route path="/visited" element={<DestinationList destinations={destinations.filter(dest => dest.visited)} toggleVisited={toggleVisited} />} />
 
-     {activePage === 'search' && (
-      <>
-      <SearchDestination destinations={destinations} onSearchResults={setFilteredDestinations} />
-      <DestinationList destinations={filteredDestinations} toggleVisited={toggleVisited} />
-      </>
-     )}
+        </Routes>
 
-      {activePage === 'visited' && (
-        <DestinationList 
-          destinations={destinations.filter(dest => dest.visited)} 
-          toggleVisited={toggleVisited} 
-        />
-      )}
-     
-    </div>
+        </div>
+
+    </Router>
+    
   );
 }
 
