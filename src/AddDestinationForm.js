@@ -19,7 +19,7 @@ function AddDestinationForm({ setDestinations}) {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (newDestination.name && newDestination.image && newDestination.notes) {
-            fetch("http://localhost:3001/destinations", {
+            fetch("https://destinations-qe0j.onrender.com/destinations", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

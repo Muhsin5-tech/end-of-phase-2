@@ -14,7 +14,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch("http://localhost:3001/destinations")
+    fetch("https://destinations-qe0j.onrender.com/destinations")
     .then((response) => response.json())
     .then((data) => {
       setDestinations(data)
@@ -39,7 +39,7 @@ function App() {
   setDestinations(updatedDestinations)
   setFilteredDestinations(updatedDestinations)
 
-  fetch(`http://localhost:3001/destinations/${id}`, {
+  fetch(`https://destinations-qe0j.onrender.com/destinations/${id}`, {
     method: "PATCH",
     headers: {
       'Content-Type': 'application/json',
